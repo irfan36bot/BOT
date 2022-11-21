@@ -36,7 +36,7 @@ async def add_connection(group_id, user_id):
             mycol.insert_one(data)
             return True
         except:
-            logger.exception('Some error occurred!', exc_info=True)
+            logger.exception('Some Error occurred!', exc_info=True)
 
     else:
         try:
