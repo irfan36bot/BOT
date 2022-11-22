@@ -776,7 +776,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("<b><i>⚠ Error, No Results❗</i></b> \n \n<b><i>🔅Please Follow Request Tips !!</i></b> \n <b><i>🎰 Request Tips › [</i></b><a href="https://telegram.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>'")
+        k = await msg.reply("<b><i>⚠ Error, No Results❗</i></b> \n \n<b><i>🔅Please Follow Request Tips !!</i></b> \n <b><i>🎰 Request Tips › [</i></b><a href="https://telegram.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>")
         await asyncio.sleep(8)
         await k.delete()
         return
