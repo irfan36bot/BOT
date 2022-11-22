@@ -164,7 +164,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b><i>⚠ Error, No Results❗</i></b> \n<i><b>🎰Please Follow Request Tips </i></b> \n <b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
+            k = await query.message.edit('<b><i>⚠ Error, No Results❗</i></b> \n\n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -739,7 +739,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🔆 Your Search Results</b> ‛{search}’👇"
+        cap = f"<b>Your Search Results</b> ‛{search}’👇"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -776,7 +776,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply('<b><i>⚠ Error, No Results❗</i></b> \n<b><i>🔅Please Follow Request Tips !!</i></b> \n <b><i>🎰 Request Tips › [</i></b><a href="https://telegram.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
+        k = await msg.reply('<b><i>⚠ Error, No Results❗</i></b> \n\n<b><i>📮 Please Follow Request Tips !!</i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://telegram.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -805,7 +805,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply('<b><i>⚠ Error, No Results❗</i></b> \n<i><b>🎰Please Follow Request Tips </i></b> \n <b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
+        k = await msg.reply('<b><i>⚠ Error, No Results❗</i></b> \n\n<i><b>📮 Please Follow Request Tips </i></b> \n <b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
         await asyncio.sleep(8)
         await k.delete()
         return
