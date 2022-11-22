@@ -62,7 +62,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("❗Honey, It's Not For You 🚫 \n❗हनी, ये तुम्हारे लिए नहीं है 🚫", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -224,7 +224,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("🚫Honey, Please Don't Click On Other's Requests 🙂 \n 🚫हनी, कृपया दूसरे के रिक्वेस्ट पर क्लिक न करें 🙂", show_alert=True)
+                await query.answer("❗Honey, It's Not For You 🚫 \n❗हनी, ये तुम्हारे लिए नहीं है 🚫", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -872,6 +872,3 @@ async def manual_filters(client, message, text=False):
                 break
     else:
         return False
-   
-    
-    #AM_ROBOTS
