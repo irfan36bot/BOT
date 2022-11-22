@@ -34,7 +34,7 @@ async def gen_link_s(bot, message):
     string = 'filep_' if message.text.lower().strip() == "/plink" else 'file_'
     string += file_id
     outstr = base64.urlsafe_b64encode(string.encode("ascii")).decode().strip("=")
-    await message.reply(f"<b><i>🎰 Here Is Your Link👇</i></b>\nhttps://t.me/{temp.U_NAME}?start={outstr}")
+    await message.reply(f"<b>🎰 Here Is Your Link👇</b>\nhttps://telegram.me/{temp.U_NAME}?start={outstr}")
     
     
 @Client.on_message(filters.command(['batch', 'pbatch']) & filters.create(allowed))
@@ -77,7 +77,7 @@ async def gen_link_batch(bot, message):
     if chat_id in FILE_STORE_CHANNEL:
         string = f"{f_msg_id}_{l_msg_id}_{chat_id}_{cmd.lower().strip()}"
         b_64 = base64.urlsafe_b64encode(string.encode("ascii")).decode().strip("=")
-        return await sts.edit(f"<b><i>🎰 Here Is Your Link👇</i></b> \nhttps://telegram.me/{temp.U_NAME}?start=DSTORE-{b_64}")
+        return await sts.edit(f"<b>🎰 Here Is Your Link👇</b> \nhttps://telegram.me/{temp.U_NAME}?start=DSTORE-{b_64}")
 
     FRMT = "<b>Generating Link 🌀\nTotal Messages › `{total}`\nDone › `{current}`\nRemaining › `{rem}`\nStatus › `{sts}`</b>"
 
@@ -122,4 +122,4 @@ async def gen_link_batch(bot, message):
     post = await bot.send_document(LOG_CHANNEL, f"batchmode_{message.from_user.id}.json", file_name="Batch.json", caption="📮 Batch File Logs 📮")
     os.remove(f"batchmode_{message.from_user.id}.json")
     file_id, ref = unpack_new_file_id(post.document.file_id)
-    await sts.edit(f"<b><i>🎰 Here Is Your Link👇</i></b> \nContains `{og_msg}` Files\n https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id}</b>")
+    await sts.edit(f"<b>🎰 Here Is Your Link👇</b> \n<b>📚Contains </b>`{og_msg}` <b>Files</b>\n https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id}</b>")
