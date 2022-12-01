@@ -260,13 +260,15 @@ async def channel_info(bot, message):
     else:
         raise ValueError("Unexpected type of CHANNELS")
 
-    text = '📮 **Indexed Channels** » {len(CHANNELS)}\n'
+    text = '📮 **Indexed Channels**\n'
     for channel in channels:
         chat = await bot.get_chat(channel)
         if chat.username:
             text += '\n@' + chat.username
         else:
-            text += '\n' + chat.title or chat.first_name'
+            text += '\n' + chat.title or chat.first_name
+
+    text += f'\n\n**Total ›** {len(CHANNELS)}'
 
     if len(text) < 4096:
         await message.reply(text)
