@@ -90,11 +90,13 @@ This Works Only For Admins!
 •<i> /unban  - Unban a User</i>
 •<i> /channel - List of All Connected Channels</i>
 •<i> /broadcast - Broadcast a Message to All Users</i>"""
-    STATUS_TXT = """📮Total Files : {}
-📮Total Users : {}
-📮Total Chats : {}
-📮Used Storage : {} MB
-📮Free Storage : {} MB"""
+    STATUS_TXT = """<b>𝐒𝐘𝐃𝐍𝐄𝐘᭄ Statistics 📲</b>
+
+📮<b>Total Files :</b> {}
+📮<b>Total Users :</b> {}
+📮<b>Total Chats :</b> {}
+📮<b>Used Storage :</b> {} MB
+📮<b>Free Storage :</b> {} MB"""
 
     LOG_TEXT_G = """<b>#NewGroup</b>
 <b>Group »</b> {} (<code>{}</code>)
