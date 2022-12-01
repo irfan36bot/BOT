@@ -1,12 +1,12 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/TeenOfFire/4GBShortner /4GBShortner
+  git clone https://github.com/TeenOfFire/HeroFlix /HeroFlix
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /4GBShortner
+  git clone $UPSTREAM_REPO /HeroFlix
 fi
-cd /4GBShortner
+cd /HeroFlix
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
 python3 bot.py
