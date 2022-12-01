@@ -36,4 +36,6 @@ async def verupikkals(bot, message):
         done += 1
         await asyncio.sleep(2)
         if not done % 20:
-            await sts.edit(f"📲<b> Broadcasting </b>♻️\n\n🔸Total Users › {total_users}\n🔹Completed›  {done} / {total_users}\n🔸Success › {success}\n🔹Blocked › {blocked}\n🔸Deleted›  {deleted}") time_taken = datetime.timedelta(seconds=int(time.time()-start_time)) await sts.edit(f"<b>📲Broadcast Completed ✅</b>\n⌚Completed in {time_taken} Seconds\n\n🔸Total Users › {total_users}\n🔹Completed›  {done} / {total_users}\n🔸Success › {success}\n🔹Blocked › {blocked}\n🔸Deleted › {deleted}")
+            await sts.edit(f"📲<b> Broadcasting </b>♻️\n\n🔸Total Users › {total_users}\n🔹Completed›  {done} / {total_users}\n🔸Success › {success}\n🔹Blocked › {blocked}\n🔸Deleted›  {deleted}") 
+    time_taken = datetime.timedelta(seconds=int(time.time()-start_time)) 
+    await sts.edit(f"<b>📲Broadcast Completed ✅</b>\n⌚Completed in {time_taken} Seconds\n\n🔸Total Users › {total_users}\n🔹Completed›  {done} / {total_users}\n🔸Success › {success}\n🔹Blocked › {blocked}\n🔸Deleted › {deleted}")
