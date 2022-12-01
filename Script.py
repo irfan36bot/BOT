@@ -48,7 +48,7 @@ Here Is The Help For My Commands"""
 3. <i>Buttons should be properly parsed as markdown format</i>
 
 <b>URL Buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/HeroFlixbot)</code>
+<code>[Button Text](buttonurl:https://t.me/HeroRiderbot)</code>
 
 <b>Alert Buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
@@ -96,12 +96,12 @@ This Works Only For Admins!
 ★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: {} 𝙼𝚒𝙱
 ★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: {} 𝙼𝚒𝙱"""
 
-    LOG_TEXT_G = """#NewGroup
-Group = {}(<code>{}</code>)
-Total Members = <code>{}</code>
-Added By - {}
+    LOG_TEXT_G = """<b>#NewGroup</b>
+<b>Group »</b> {}(<code>{}</code>)
+<b>Total Members »</b> <code>{}</code>
+<b>Added By »</b> {}
 """
-    LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Name - {}
+    LOG_TEXT_P = """<b>#NewUser</b>
+<b>ID »</b> <code>{}</code>
+<b>Name »</b> {}
 """
