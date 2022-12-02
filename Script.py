@@ -95,8 +95,8 @@ This Works Only For Admins!
 📮<b>Total Files :</b> {}
 📮<b>Total Users :</b> {}
 📮<b>Total Chats :</b> {}
-📮<b>Used Storage :</b> {} MB
-📮<b>Free Storage :</b> {} MB"""
+📮<b>Used Storage :</b> {} 
+📮<b>Free Storage :</b> {}"""
 
     LOG_TEXT_G = """<b>#NewGroup</b>
 <b>Group »</b> {} (<code>{}</code>)
