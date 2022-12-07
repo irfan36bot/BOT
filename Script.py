@@ -99,11 +99,13 @@ This Works Only For Admins!
 📮<b>Free Storage :</b> {}"""
 
     LOG_TEXT_G = """<b>#NewGroup</b>
+
 <b>Group »</b> {} (<code>{}</code>)
 <b>Total Members »</b> <code>{}</code>
 <b>Added By »</b> {}
 """
     LOG_TEXT_P = """<b>#NewUser</b>
+
 <b>ID »</b> <code>{}</code>
 <b>Name »</b> {}
 """
