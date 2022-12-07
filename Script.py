@@ -11,7 +11,7 @@ def is_enabled(value, default):
         return default
 
 class script(object):
-    START_TXT = """<b>🧤Helo {}, I'm <a href=https://telegram.me/{}>{}</a> &amp; I Can Provide You Any Movies &amp; Series</b> 😇"""
+    START_TXT = """<i><b>🎃 Helo {}, I'm <a href=https://telegram.me/{}>{}</a></i></b> \n\n<i><b>🎗I Can Provide You Any Movies, Web-Series, Anime, K-Dramas, Animation, etc.,</i></b>"""
     HELP_TXT = """𝙷𝙴𝚈 {}
 Here Is The Help For My Commands"""
     ABOUT_TXT = """<i><b><u>AutoFilter + UrlShortner Bot</u></b>
