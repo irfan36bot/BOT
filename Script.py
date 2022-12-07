@@ -12,7 +12,7 @@ def is_enabled(value, default):
 
 class script(object):
     START_TXT = """<i><b>🎃 Helo {}, I'm <a href=https://telegram.me/{}>{}</a></i></b> \n\n<i><b>🎗I Can Provide You Any Movies, Web-Series, Anime, K-Dramas, Animation, etc.,</i></b>"""
-    HELP_TXT = """<b>❓How To Use Me? </b> \n\n<b>❗Just Send Me Any Movie or Series Name & I Will Send It To You Here Instantly</b>"""
+    HELP_TXT = """<b>❓How To Use Me? </b> \n\n<b>❗Just Send Me Any Movie or Series Name & I Will Send It To You Here Instantly or You Can Add Me To Your Group & You Can Request There</b>"""
     ABOUT_TXT = """<i><b><u>AutoFilter + UrlShortner Bot</u></b>
 
 🔅 Want An </i><i><b>'AutoFilter + UrlShortner Bot'</b> Like Me For Your Group &amp; Earn Money Using It?
