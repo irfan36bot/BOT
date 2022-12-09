@@ -106,5 +106,5 @@ This Works Only For Admins!
     LOG_TEXT_P = """<b>#NewUser</b>
 
 <b>ID »</b> <code>{}</code>
-<b>Name »</b> {}
+<b>Name »</b> {} <b>🎗️User 𝖫𝗂𝗇𝗄:</b> <a href='tg://user?id={from_user.id}'><b>Click Here</b></a>"
 """
