@@ -58,10 +58,10 @@ async def showid(client, message):
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
-        "`𝚂𝙴𝙰𝚁𝙲𝙷𝙸𝙽𝙶 𝚄𝚂𝙴𝚁...`"
+        "`📮Getting User Info ♻`"
     )
     await status_message.edit(
-        "`𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽...`"
+        "`📮Getting User Info ♻`"
     )
     from_user = None
     from_user_id, _ = extract_user(message)
@@ -73,7 +73,7 @@ async def who_is(client, message):
     if from_user is None:
         return await status_message.edit("no valid user_id / message specified")
     message_out_str = ""
-    message_out_str += f"<b>👤 User ›</b> <a href='tg://user?id={from_user.id}'><b>{from_user.first_name} {last_name}</b></a> \n" 
+    message_out_str += f"<b>👤 User ›</b> <a href='tg://user?id={from_user.id}'><b>{from_user.first_name}</b></a> \n" 
     message_out_str += f"<b>🆔 User ID ›</b> <code>{from_user.id}</code>\n"
         
     chat_photo = from_user.photo
