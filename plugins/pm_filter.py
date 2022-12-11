@@ -379,12 +379,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart Okay 😒", show_alert=True)
+            await query.answer("U Think You Can Fool Me? You Didn't Join The Main Channel, So Join & Try 😑I Like Your Smartness, But Don't Be Oversmart Okay 😒", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            return await query.answer('No such file exist.')
+            return await query.answer('File Not Found')
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -542,7 +542,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "rfrsh":
-        await query.answer("Fetching MongoDb DataBase")
+        await query.answer("Getting Statistics ♻️")
         buttons = [[
             InlineKeyboardButton('🔙 BACK', callback_data='help'),
             InlineKeyboardButton('♻️ Refresh', callback_data='rfrsh')
@@ -716,7 +716,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Your Search Results</b> ‛{search}’👇"
+        cap = f"<b>🔆 彡 [ @HEROFLiX ] 彡 🔆</b> \n\n<b>Your Search Results</b> ‛{search}’👇"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -794,7 +794,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="🔐 Close 🔐", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>",
+    await msg.reply("<b>🔆 彡 [ @HEROFLiX ] 彡 🔆</b> \n\n<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
