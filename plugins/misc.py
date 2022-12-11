@@ -73,7 +73,7 @@ async def who_is(client, message):
     if from_user is None:
         return await status_message.edit("no valid user_id / message specified")
     message_out_str = ""
-    message_out_str += f"<b>🎗️User : {u.mention}"
+    message_out_str += f"<b>🎗️User : {mention}"
     message_out_str += f"<b>🎗️User ID:</b> <code>{from_user.id}</code>\n"
     username = from_user.username or "<b>None</b>"
     dc_id = from_user.dc_id or "[User Doesn't Have A Valid DP]"
