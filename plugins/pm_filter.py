@@ -716,7 +716,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🔆 彡 [ @HEROFLiX ] 彡 🔆</b> \n\n<b>Your Search Results</b> ‛{search}’👇"
+        cap = f"🔆<b>Your Search Results</b> ‛{search}’👇 \n\n <i> Click On Any File From Below To Download It</i>"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -794,7 +794,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="🔐 Close 🔐", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("<b>🔆 彡 [ @HEROFLiX ] 彡 🔆</b> \n\n<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>",
+    await msg.reply("<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
