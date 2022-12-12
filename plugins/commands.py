@@ -81,7 +81,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://telegram.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**🎗 You Have To Join Our Channel To Use Me 🎗 \n 🎗 मुझे इस्तेमाल करने के लिए हमारे चैनल से जुड़ना होगा 🎗**",
+            text="**🎗 You Have To Join Our Channel To Use Me 🎗 \n 🎗 मुझे इस्तेमाल करने के लिए हमारे चैनल से जुड़ना होगा 🎗** \n\n**🎃Main Channel » @HeroFlix **",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
