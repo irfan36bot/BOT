@@ -89,7 +89,7 @@ This Works Only For Admins!
 •<i> /unban  - Unban a User</i>
 •<i> /channel - List of All Connected Channels</i>
 •<i> /broadcast - Broadcast a Message to All Users</i>"""
-    STATUS_TXT = """<i><b><a href=https://telegram.me/{}>{}</a></i></b> <b>Statistics 📲</b>
+    STATUS_TXT = """<b>🎗️ My Statistics 📲</b>
 
 📮<b>Total Files :</b> {}
 📮<b>Total Users :</b> {}
