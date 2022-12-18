@@ -21,7 +21,7 @@ async def save_group(bot, message):
         if message.chat.id in temp.BANNED_CHATS:
             # Inspired from a boat of a banana tree
             buttons = [[
-                InlineKeyboardButton('🎗Support🎗', url=f'https://telegram.me/{SUPPORT_CHAT}')
+                InlineKeyboardButton('🎗Support🎗', url=f'https://telegram.me/Herofeedbot')
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             k = await message.reply(
@@ -43,20 +43,7 @@ async def save_group(bot, message):
         await message.reply_text(
             text=f"<b>Thank You For Adding Me To {message.chat.title} \n\nMake Me Admin \nContact Support If You Have Any Doubts.</b>",
             reply_markup=reply_markup)
-    else:
-        settings = await get_settings(message.chat.id)
-        if settings["welcome"]:
-            for u in message.new_chat_members:
-                if (temp.MELCOW).get('welcome') is not None:
-                    try:
-                        await (temp.MELCOW['welcome']).delete()
-                    except:
-                        pass
-                temp.MELCOW['welcome'] = await message.reply_video(
-                video="https://te.legra.ph/file/521122a3307670a2aa571.gif",                                               
-                                                 caption=f'<i>🧤</i><i><b>Helo, </b>{u.mention}</i><b><i>, Welcome To </i></b><a href="https://telegram.me/Heroflix"><b><i>HEROFLiX • GROUP</i></b></a> <i><b>亗</b> \n 📚You Can Request Any Movies, Series, Animation etc., here</i>',
-                                                 reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❓How To Download❓', url='https://t.me/HEROFLiX/1201') ] ] )
-                )
+    
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
@@ -69,7 +56,7 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         buttons = [[
-            InlineKeyboardButton('🎗️Support🎗️', url=f'https://t.me/{SUPPORT_CHAT}')
+            InlineKeyboardButton('🎗️Support🎗️', url=f'https://telegram.me/HeroFeedbot')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
@@ -108,7 +95,7 @@ async def disable_chat(bot, message):
     await message.reply('Chat Successfully Disabled')
     try:
         buttons = [[
-            InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+            InlineKeyboardButton('🎗️Support🎗️', url=f'https://telegram.me/HeroFeedbot')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
@@ -173,7 +160,7 @@ async def gen_invite(bot, message):
 
 @Client.on_message(filters.command('ban') & filters.user(ADMINS))
 async def ban_a_user(bot, message):
-    # https://t.me/GetTGLink/4185
+  
     if len(message.command) == 1:
         return await message.reply('Give me a user id / username')
     r = message.text.split(None)
