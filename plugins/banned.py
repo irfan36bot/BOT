@@ -17,16 +17,21 @@ async def disabled_chat(_, client, message: Message):
 
 disabled_group=filters.create(disabled_chat)
 
-
+###########
 @Client.on_message(filters.private & banned_user & filters.incoming)
 async def ban_reply(bot, message):
-    ban = await db.get_ban_status(message.from_user.id)
-    await message.reply(f'🚫<b> Honey, You Are Banned From Using Me </b> \n❗<b>Why ?</b> {ban["ban_reason"]} 🙁 \n\n<b>📲 Contact @HeroFeedbot if You Want To Get Unbanned</b>')
+    buttons = [[
+        InlineKeyboardButton('🎗️ Support 🎗️', url=f'https://telegram.me/{SUPPORT_CHAT}')
+    ]]
+    reply_markup=InlineKeyboardMarkup(buttons)
+    k = await message.reply(
+        text=f'🚫<b> Honey, You Are Banned From Using Me </b> \n❗<b>Why ?</b> {ban["ban_reason"]}\n\n<b>📲 Contact Support To Use Me</b>') 
+#############
 
 @Client.on_message(filters.group & disabled_group & filters.incoming)
 async def grp_bd(bot, message):
     buttons = [[
-        InlineKeyboardButton('📱Support📱', url=f'https://telegram.me/{SUPPORT_CHAT}')
+        InlineKeyboardButton('🎗️ Support 🎗️', url=f'https://telegram.me/{SUPPORT_CHAT}')
     ]]
     reply_markup=InlineKeyboardMarkup(buttons)
     vazha = await db.get_chat(message.chat.id)
