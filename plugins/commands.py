@@ -24,11 +24,8 @@ async def start(client, message):
         buttons = [
             [
                 InlineKeyboardButton('🎗️ Updates', url='https://telegram.me/HeroFlix')
-            ],
-            [
-                InlineKeyboardButton('ℹ️ Help', url=f"https://telegram.me/{temp.U_NAME}?start=help"),
             ]
-            ]
+               ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
@@ -111,7 +108,7 @@ async def start(client, message):
         file_id = data
         pre = ""
     if data.split("-", 1)[0] == "BATCH":
-        sts = await message.reply("♻♻♻")
+        sts = await message.reply("Getting Files ♻️")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
