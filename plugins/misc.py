@@ -40,7 +40,7 @@ async def showid(client, message):
             file_info = get_file_id(message.reply_to_message)
         else:
             _id += (
-                "<b>🎗Chat ID › </b>"
+                "<b>🎗User ID › </b>"
                 f"<code>{message.from_user.id if message.from_user else 'Anonymous'}</code>\n"
             )
             file_info = get_file_id(message)
