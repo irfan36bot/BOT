@@ -793,10 +793,11 @@ async def advantage_spell_chok(msg):
             callback_data=f"spolling#{user}#{k}",
         )
     ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="🔐 Close 🔐", callback_data=f'spolling#{user}#close_spellcheck')])
+    btn.append([InlineKeyboardButton(text="××××× ⟨ Close ⟩ ×××××", callback_data=f'spolling#{user}#close_spellcheck')])
     await msg.reply("<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
-
+    await asyncio.sleep(30)
+        await k.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
