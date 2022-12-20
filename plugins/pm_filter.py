@@ -796,8 +796,6 @@ async def advantage_spell_chok(msg):
     btn.append([InlineKeyboardButton(text="××××× ⟨ Close ⟩ ×××××", callback_data=f'spolling#{user}#close_spellcheck')])
     await msg.reply("<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(10)
-        await k.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
