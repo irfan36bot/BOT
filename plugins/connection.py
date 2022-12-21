@@ -56,7 +56,7 @@ async def addconnection(client, message):
             addcon = await add_connection(str(group_id), str(userid))
             if addcon:
                 await message.reply_text(
-                    f"<b>📮 Successfully Connected To **{title}**</b>\n\n <b>Now You Can Use Me Here</b>",
+                    f"**📮 Successfully Connected To {title}**\n\n**Now You Can Use Me Here**",
                     quote=True,
                     parse_mode=enums.ParseMode.MARKDOWN
                 )
