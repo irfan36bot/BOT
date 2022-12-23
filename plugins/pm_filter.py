@@ -742,30 +742,24 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"🔆<b>Your Search Results</b> ‛{search}’👇"
     if imdb and imdb.get('poster'):
         try:
-            hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
-            if SELF_DELETE:
-                await asyncio.sleep(SELF_DELETE_SECONDS)
-                await hehe.delete()
-
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            if SELF_DELETE:
-                await asyncio.sleep(SELF_DELETE_SECONDS)
-                await hmm.delete()
+            fmsg = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            if SELF_DELETE:
-                await asyncio.sleep(SELF_DELETE_SECONDS)
-                await fek.delete()
+            fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        fuk = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-        if SELF_DELETE:
-            await asyncio.sleep(SELF_DELETE_SECONDS)
-            await fuk.delete()
+        fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+    
+    await asyncio.sleep(300)
+    await fmsg.delete()
+    
+    if spoll:
+        await msg.message.delete()
+
 
 async def advantage_spell_chok(msg):
     query = re.sub(
