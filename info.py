@@ -62,10 +62,3 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', '')
 URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '')
 
-SELF_DELETE_SECONDS = int(environ.get('SELF_DELETE_SECONDS', '0'))
-SELF_DELETE = environ.get('SELF_DELETE', False)
-if SELF_DELETE == "False":
-    SELF_DELETE = False
-
-DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
-DOWNLOAD_TEXT_URL = "https://t.me/HEROFLiX/1201"
