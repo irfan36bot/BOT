@@ -58,11 +58,11 @@ async def showid(client, message):
 @Client.on_message(filters.command(["imdb", 'search']))
 async def imdb_search(client, message):
     if ' ' in message.text:
-        k = await message.reply('Searching ImDB')
+        k = await message.reply('<b>Searching IMDB ♻️<b>')
         r, title = message.text.split(None, 1)
         movies = await get_poster(title, bulk=True)
         if not movies:
-            return await message.reply("No results Found")
+            return await message.reply("<b>❗️No Results</b>")
         btn = [
             [
                 InlineKeyboardButton(
@@ -72,9 +72,9 @@ async def imdb_search(client, message):
             ]
             for movie in movies
         ]
-        await k.edit('Here is what i found on IMDb', reply_markup=InlineKeyboardMarkup(btn))
+        await k.edit('<b>Your IMDb Search Results👇</b>', reply_markup=InlineKeyboardMarkup(btn))
     else:
-        await message.reply('Give me a movie / series Name')
+        await message.reply('<b>❓How To Get Movie/Series Info❓</b> \n<b>🔅 /imdb Movie or Series Name</b>\n<b>🔅 Example » /imdb Titanic</b>')
 
 @Client.on_callback_query(filters.regex('^imdb'))
 async def imdb_callback(bot: Client, quer_y: CallbackQuery):
@@ -83,12 +83,12 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{imdb.get('title')}",
-                    url=imdb['url'],
+                    text=f"🌟Click Here To Download🌟",
+                    url="https://telegram.me/+Ap6E_6ZzVaY3MTNl",
                 )
             ]
         ]
-    message = quer_y.message.reply_to_message or quer_y.message
+    message = quer_y.message.reply_to_message or quer_y.message 
     if imdb:
         caption = IMDB_TEMPLATE.format(
             query = imdb['title'],
@@ -122,7 +122,7 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
             **locals()
         )
     else:
-        caption = "No Results"
+        caption = "❗️No Results"
     if imdb.get('poster'):
         try:
             await quer_y.message.reply_photo(photo=imdb['poster'], caption=caption, reply_markup=InlineKeyboardMarkup(btn))
@@ -137,6 +137,4 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     else:
         await quer_y.message.edit(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
     await quer_y.answer()
-        
-
         
