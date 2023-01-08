@@ -10,27 +10,26 @@ def is_enabled(value, default):
     else:
         return default
 
-SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '1736204'))
 API_HASH = environ.get('API_HASH', '890d40e0f91a4de32dec2965444b2cbe')
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '5712412804:AAHQn7NhSEHUn0aF_CIlBGKk1l69mVbTW3k')
 
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://te.legra.ph/file/30ef18b360b85a33f712b.jpg https://te.legra.ph/file/e17896174c04e67417b4a.jpg https://te.legra.ph/file/ae7342b2b4b4c0d0b448a.jpg https://te.legra.ph/file/2405007ed86482c637118.jpg)).split()
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1058015838').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001638006524').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1058015838').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'heroflix_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Testing:Testing@cluster0.fkelfqj.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Beta")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Beta')
 
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001652564383'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '5884491121')
