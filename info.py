@@ -13,7 +13,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '1736204'))
 API_HASH = environ.get('API_HASH', '890d40e0f91a4de32dec2965444b2cbe')
-BOT_TOKEN = environ.get('BOT_TOKEN', '5949308801:AAFinzOHzNC72Jnm-_lqkGY32PHOhRdxuxc')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
@@ -30,7 +30,7 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'telegram_files')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001652564383'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '5884491121')
