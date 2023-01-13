@@ -714,7 +714,7 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"<b>🔆 Your Search Results</b> ‛{search}’ 👇"
     if imdb and imdb.get('poster'):
         try:
-            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+            hehe =  await  message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                       reply_markup=InlineKeyboardMarkup(btn))
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
