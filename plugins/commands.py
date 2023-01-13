@@ -336,7 +336,7 @@ async def delete(bot, message):
 @Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
 async def delete_all_index(bot, message):
     await message.reply_text(
-        '**❓Do You Want To Delete All Files From Your Index❓**',
+        '**❓Delete Indexed Files❓**',
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -429,13 +429,7 @@ async def settings(client, message):
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
                     InlineKeyboardButton('YES ✅' if settings["spell_check"] else 'NO ❌',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
-                ],
-                [
-                    InlineKeyboardButton('🎉 WELCOME ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('YES ✅' if settings["welcome"] else 'NO ❌',
-                                         callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
-                ),
-            ],
+                ]
         ]
 
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -491,4 +485,4 @@ async def save_template(client, message):
         return await sts.edit("No Input!!")
     template = message.text.split(" ", 1)[1]
     await save_group_settings(grp_id, 'template', template)
-    await sts.edit(f"<b>✅ Updated You IMDb Template in </b>{title} <b>to</b>\n\n{template}")
+    await sts.edit(f"<b>✅ Updated Your IMDb Template in </b>{title} <b>to</b>\n\n{template}")
