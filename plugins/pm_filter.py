@@ -128,7 +128,7 @@ async def advantage_spoll_choker(bot, query):
     if int(user) != 0 and query.from_user.id != int(user):
         return await query.answer("🔆 Honey, It's Not For You❗\n🔆 हनी, ये तुम्हारे लिए नहीं है❗", show_alert=True)
     if movie_ == "close_spellcheck":
-        return await query.message.delete()
+        return await query.message.delete(1)
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
     if not movies:
         return await query.answer("🚫Link Expired, Request Again ♻", show_alert=True)
