@@ -35,14 +35,6 @@ async def give_filter(client, message):
     if k == False:
         await auto_filter(client, message)
 
-
-@Client.on_message(filters.group & filters.text & filters.incoming)
-async def give_filter(client, message):
-    k = await manual_filters(client, message)
-    if k == False:
-        await auto_filter(client, message)
-
-
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
@@ -149,7 +141,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
+            await query.message.edit('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
             await asyncio.sleep(20)
             await k.delete()
 
