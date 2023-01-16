@@ -28,7 +28,6 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
-
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
@@ -85,7 +84,7 @@ async def next_page(bot, query):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="❓‹⟨ How To Download ⟩›❓", url='https://telegram.me/HEROFLiX/1201')
+            InlineKeyboardButton(text="❓⟨ How To Download ⟩❓", url='https://telegram.me/HEROFLiX/1201')
         ]
     )
 
@@ -121,7 +120,6 @@ async def next_page(bot, query):
         pass
     await query.answer()
 
-
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
@@ -144,7 +142,6 @@ async def advantage_spoll_choker(bot, query):
             await query.message.edit('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
             await asyncio.sleep(20)
             await k.delete()
-
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
@@ -412,7 +409,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🚩 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
+            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
         ], [
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
@@ -660,7 +657,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0,
         [
-            InlineKeyboardButton(text="❓‹⟨ How To Download ⟩›❓", url='https://telegram.me/HEROFLiX/1201')
+            InlineKeyboardButton(text="❓⟨ How To Download ⟩❓", url='https://telegram.me/HEROFLiX/1201')
         ]
     )
 
@@ -768,7 +765,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply('<b>❗Enter Correct Name👇</b> \n<b>❗सही नाम दर्ज करें👇</b>')
+        k = await msg.reply('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<b><i>📮 Please Follow Request Tips !!</i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://telegram.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
         await asyncio.sleep(20)
         await k.delete()
         return
