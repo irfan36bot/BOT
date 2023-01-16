@@ -41,7 +41,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🚩 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
+            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
@@ -64,7 +64,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🎄 Click Here & Join 🎄", url=invite_link.invite_link
+                    "🎄 Click Here To Join 🎄", url=invite_link.invite_link
                 )
             ]
         ]
@@ -87,7 +87,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🚩 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
+            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
@@ -441,7 +441,6 @@ async def settings(client, message):
             parse_mode=enums.ParseMode.HTML,
             reply_to_message_id=message.id
         )
-
 
 
 @Client.on_message(filters.command('set_template'))
