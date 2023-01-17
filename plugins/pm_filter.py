@@ -141,7 +141,7 @@ async def advantage_spoll_choker(bot, query):
         else:
             await query.message.edit('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
             await asyncio.sleep(20)
-            await k.delete()
+            await msg.message.delete()
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
@@ -723,9 +723,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
-        await asyncio.sleep(21600)
-        await k.delete()
-
+        await msg.message.delete()
 
 async def advantage_spell_chok(msg):
     query = re.sub(
