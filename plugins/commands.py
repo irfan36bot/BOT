@@ -41,6 +41,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
             ],[
+            InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201')
+            ],[
             InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
             ],[
@@ -86,6 +88,8 @@ async def start(client, message):
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201')
             ],[
             InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
