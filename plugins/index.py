@@ -84,16 +84,14 @@ async def send_for_index(bot, message):
     if message.from_user.id in ADMINS:
         buttons = [
             [
-                InlineKeyboardButton('✅ Yes ✅',
-                                     callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}')
-            ],
-            [
-                InlineKeyboardButton('❌ Cancel ❌', callback_data='close_data'),
+                InlineKeyboardButton('✅ Accept',
+                                     callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}'),
+                InlineKeyboardButton('❌ Reject', callback_data='close_data')
             ]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
         return await message.reply(
-            f'<b>❓Do you Want To Index The Files From This Channel❓</b>\n\n<b>Chat ID/ Username ›</b> <code>{chat_id}</code>',
+            f'<b>❓Index This Channel Files❓</b>\n\n🔖<b>Chat ID/ Username ›</b> <code>{chat_id}</code>',
             reply_markup=reply_markup)
 
     if type(chat_id) is int:
@@ -105,19 +103,17 @@ async def send_for_index(bot, message):
         link = f"@{message.forward_from_chat.username}"
     buttons = [
         [
-            InlineKeyboardButton('✅ Accept Index',
-                                 callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}')
-        ],
-        [
-            InlineKeyboardButton('❌ Reject Index',
-                                 callback_data=f'index#reject#{chat_id}#{message.id}#{message.from_user.id}'),
+            InlineKeyboardButton('✅ Accept',
+                                 callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}'),
+            InlineKeyboardButton('❌ Reject',
+                                 callback_data=f'index#reject#{chat_id}#{message.id}#{message.from_user.id}')
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
     await bot.send_message(LOG_CHANNEL,
-                           f'#IndexRequest\n\nBy : {message.from_user.mention} (<code>{message.from_user.id}</code>)\nChat ID/ Username - <code> {chat_id}</code>\nLast Message ID - <code>{last_msg_id}</code>\nInviteLink - {link}',
+                           f'<b>#IndexRequest</b>\n\n👤User {message.from_user.mention} [<code>{message.from_user.id}</code>]\n📮 Channel - {link}',
                            reply_markup=reply_markup)
-    await message.reply('ThankYou For the Contribution, Wait For My Moderators to verify the files.')
+    await message.reply('ThankYou For the Contribution, Wait For My Boss to verify the files.')
 
 
 @Client.on_message(filters.command('setskip') & filters.user(ADMINS))
@@ -182,4 +178,4 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
             logger.exception(e)
             await msg.edit(f'Error: {e}')
         else:
-            await msg.edit(f'<b>🚩Saved </b><code>{total_files}</code> <b>Files!</b>\n<b>Duplicate Files:</b> <code>{duplicate}</code>\n<b>Deleted Messages:</b> <code>{deleted}</code>\n<b>Non-Media Messages:</b> <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>')
+            await msg.edit(f'<b>🔆 Saved </b><code>{total_files}</code> <b>Files!</b>\n\nDuplicate Files: <code>{duplicate}</code>\nDeleted Messages: <code>{deleted}</code>\nNon-Media Messages: <code>{no_media + unsupported}</code>(Unsupported Media - `{unsupported}` )\nErrors Occurred: <code>{errors}</code>')
