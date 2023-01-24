@@ -102,8 +102,7 @@ This Works Only For Admins!
 <b>Total Members »</b> <code>{}</code>
 <b>Added By »</b> {}
 """
-    LOG_TEXT_P = """<b>#NewUser</b>
-<b>👤Name|</b> {}
-<b>🗳ID |</b> <code>{}</code>
- 
+    LOG_TEXT_P = """#NewUser
+ID - <code>{}</code>
+Name - {}
 """
