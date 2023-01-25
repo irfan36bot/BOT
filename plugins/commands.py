@@ -39,15 +39,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201')
-            ],[
-            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
+            InlineKeyboardButton('➕ Add Me To Your Group ➕', callback_data='about')
+        ], [
+            InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201'),
+        ], [            
+            InlineKeyboardButton('🗳 Help', callback_data='help'),
+            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+E5DNZdosGiQ1OGY9'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('🕹 Repo', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -87,15 +85,13 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201')
-            ],[
-            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+Ap6E_6ZzVaY3MTNl'),
+            InlineKeyboardButton('➕ Add Me To Your Group ➕', callback_data='about')
+        ], [
+            InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201'),
+        ], [            
+            InlineKeyboardButton('🗳 Help', callback_data='help'),
+            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+E5DNZdosGiQ1OGY9'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('🕹 Repo', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
