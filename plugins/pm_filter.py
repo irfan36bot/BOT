@@ -33,14 +33,23 @@ G_MODE = {}
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     if G_FILTER:
-        kd = await global_filters(client, message)
+        if G_MODE.get(str(message.chat.id)) == "False":
+            return 
+        else:
+            kd = await global_filters(client, message)
         if kd == False:          
-            await manual_filters(client, message)
-            else:
+            k = await manual_filters(client, message)
+            if k == False:
+                if FILTER_MODE.get(str(message.chat.id)) == "False":
+                    return
+                else:
                     await auto_filter(client, message)   
     else:
-        await manual_filters(client, message)
-        else:
+        k = await manual_filters(client, message)
+        if k == False:
+            if FILTER_MODE.get(str(message.chat.id)) == "False":
+                return
+            else:
                 await auto_filter(client, message)   
 
 
