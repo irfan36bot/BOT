@@ -38,9 +38,7 @@ async def give_filter(client, message):
         else:
             kd = await global_filters(client, message)
         if kd == False:          
-            k = await manual_filters(client, message)
-            if k == False:
-                if FILTER_MODE.get(str(message.chat.id)) == "False":
+            if FILTER_MODE.get(str(message.chat.id)) == "False":
                     return
                 else:
                     await auto_filter(client, message)   
