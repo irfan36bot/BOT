@@ -58,8 +58,6 @@ async def save_group(bot, message):
                                                  reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❗How To Request & Download❗', url='https://telegram.me/HEROFLiX/1201') ] ] )
                 )
 
-    
-
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
     if len(message.command) == 1:
