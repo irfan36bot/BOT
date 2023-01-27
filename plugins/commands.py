@@ -435,9 +435,9 @@ async def settings(client, message):
                     InlineKeyboardButton('YES ✅' if settings["welcome"] else '❌ NO',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ]
-            ]
+        ]
 
-            reply_markup = InlineKeyboardMarkup(buttons)
+        reply_markup = InlineKeyboardMarkup(buttons)
 
         await message.reply_text(
             text=f"<b>📲 Change The Bot Settings For {title}..</b>",
