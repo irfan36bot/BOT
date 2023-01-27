@@ -436,6 +436,7 @@ async def settings(client, message):
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ]
             ]
+
             reply_markup = InlineKeyboardMarkup(buttons)
 
         await message.reply_text(
