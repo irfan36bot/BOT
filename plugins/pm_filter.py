@@ -38,7 +38,9 @@ async def give_filter(client, message):
         else:
             kd = await global_filters(client, message)
         if kd == False:          
-            if FILTER_MODE.get(str(message.chat.id)) == "False":
+            k = await manual_filters(client, message)
+            if k == False:
+                if FILTER_MODE.get(str(message.chat.id)) == "False":
                     return
                 else:
                     await auto_filter(client, message)   
@@ -49,8 +51,6 @@ async def give_filter(client, message):
                 return
             else:
                 await auto_filter(client, message)   
-
-
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
