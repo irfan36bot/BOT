@@ -13,11 +13,11 @@ def is_enabled(value, default):
 class script(object):
     START_TXT = """<i><b>🎃 Helo {}, I'm <a href=https://telegram.me/{}>{}</a></i></b> \n\n<i><b>🎗I Can Provide You Any Movies, Web-Series, Anime, K-Dramas, Animation, etc.,</i></b>"""
     HELP_TXT = """<b>❓How To Use Me? </b> \n\n<b>❗Join Our 'HeroFlix Group' or Add Me In Your Group To Get Any Movie or Series</b> \n\n🔆 <b><i>Our Official Group👇</i></b> \n<b><i>https://t.me/+WzsvFY3qXa9kZGVl</i></b>"""
-    ABOUT_TXT = """🧶 Follow These Steps To Connect Me To Your Group👇
+    ABOUT_TXT = """<i><u>🧶 </u></i><i><u><b>Follow These Steps To Connect Me To Your Group</b>👇</u>
 
-1. Click on This [Blue Text]
+1. Click on This [</i><a href="http://telegram.me/heroriderbot?startgroup=true"><i>Blue Text</i></a><i>]
 2. Select Your Group
-3. Make Me Admin in Your Group"""    
+3. Make Me Admin in Your Group</i>"""    
     SOURCE_TXT = """<i><b><u>AutoFilter + UrlShortner Bot</u></b>
 
 🔅 Want An </i><i><b>'AutoFilter + UrlShortner Bot'</b> Like Me For Your Group &amp; Earn Money Using It?
