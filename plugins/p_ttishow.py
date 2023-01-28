@@ -44,8 +44,9 @@ async def save_group(bot, message):
             text=f"<b> 🔆 Thank You For Adding Me To Your Group 😇 {message.chat.title} </b> \n\n⚜️<i><b>⚜ Make Me Admin & Then Send /connect Here To Use Me In Your Group</i></b> \n\n<i><b>🖲 Contact Support If You Have Any Doubts or Problems </i></b>",
             reply_markup=reply_markup)
     else:
+        for u in message.new_chat_members:
         await message.reply_photo(
-                photo="https://graph.org/file/75d4fcc66598ea1ef4941.jpg",                                               
+            photo="https://graph.org/file/75d4fcc66598ea1ef4941.jpg",                                               
                                                  caption=f'<b><i>🔆 "HEROFLiX • GROUP" 亗 🔆\n•───────────────────• \n⚜Hey {mention}, Welcome To HeroFlix • Group. You Can Request Any Movies, Web-Series, Anime, K-Dramas, Animation, etc., here....</i></b>',
                                                  reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❗How To Request & Download❗', url='https://telegram.me/HEROFLiX/1201') ] ] )
                 )
