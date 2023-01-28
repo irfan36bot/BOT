@@ -15,7 +15,7 @@ from utils import get_file_id, parser, split_quotes
 from info import ADMINS
 
 
-@Client.on_message(filters.command(['gfilter', 'addg']) & filters.incoming & filters.user(ADMINS))
+@Client.on_message(filters.command(['add']) & filters.incoming & filters.user(ADMINS))
 async def addgfilter(client, message):
     args = message.text.html.split(None, 1)
 
@@ -75,21 +75,21 @@ async def addgfilter(client, message):
     else:
         return
 
-    await add_gfilter('gfilters', text, reply_text, btn, fileid, alert)
+    await add_gfilter('filters', text, reply_text, btn, fileid, alert)
 
     await message.reply_text(
-        f"GFilter for  `{text}`  added",
+        f"Filter for  `{text}`  added",
         quote=True,
         parse_mode=enums.ParseMode.MARKDOWN
     )
 
 
-@Client.on_message(filters.command(['viewgfilters', 'gfilters']) & filters.incoming & filters.user(ADMINS))
+@Client.on_message(filters.command(['filters']) & filters.incoming & filters.user(ADMINS))
 async def get_all_gfilters(client, message):
-    texts = await get_gfilters('gfilters')
-    count = await count_gfilters('gfilters')
+    texts = await get_gfilters('filters')
+    count = await count_gfilters('filters')
     if count:
-        gfilterlist = f"Total number of gfilters : {count}\n\n"
+        gfilterlist = f"Total number of filters : {count}\n\n"
 
         for text in texts:
             keywords = " ×  `{}`\n".format(text)
@@ -113,15 +113,15 @@ async def get_all_gfilters(client, message):
         parse_mode=enums.ParseMode.MARKDOWN
     )
         
-@Client.on_message(filters.command('delg') & filters.incoming & filters.user(ADMINS))
+@Client.on_message(filters.command('del') & filters.incoming & filters.user(ADMINS))
 async def deletegfilter(client, message):
     try:
         cmd, text = message.text.split(" ", 1)
     except:
         await message.reply_text(
-            "<i>Mention the gfiltername which you wanna delete!</i>\n\n"
-            "<code>/delg gfiltername</code>\n\n"
-            "Use /viewgfilters to view all available gfilters",
+            "<i>Mention the filtername which you wanna delete!</i>\n\n"
+            "<code>/del filtername</code>\n\n"
+            "Use /filters to view all available gfilters",
             quote=True
         )
         return
@@ -131,10 +131,10 @@ async def deletegfilter(client, message):
     await delete_gfilter(message, query, 'gfilters')
 
 
-@Client.on_message(filters.command('delallg') & filters.user(ADMINS))
+@Client.on_message(filters.command('delall') & filters.user(ADMINS))
 async def delallgfill(client, message):
     await message.reply_text(
-            f"Do you want to continue??",
+            f"❓<b>Delete All Filters</b>❓",
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton(text="YES",callback_data="gconforme")],
                 [InlineKeyboardButton(text="CANCEL",callback_data="close_data")]
