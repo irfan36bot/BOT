@@ -134,16 +134,16 @@ async def advantage_spoll_choker(bot, query):
         return await query.answer("🚫Link Expired, Request Again ♻", show_alert=True)
     movie = movies[(int(movie_))]
     await query.answer('Checking in Database ♻️')
-    k = await manual_filters(bot, query.message, text=movie)
+    k = await global_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            await query.message.edit('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
+            k = await query.message.edit('<b><i>⚠ 404 Error, No Results❗</i></b> \n\n<b><i>🚫 The Reason❓ [</i></b><a href="https://telegram.me/HeroFlix/1371"><b><i>Click Here</i></b></a><b><i>]</i></b> \n<i><b>📮 Please Follow Request Tips </i></b> \n<b><i>🔆 Request Tips › [</i></b><a href="https://t.me/HEROFLiX/894"><b><i>Click Here</i></b></a><b><i>]</i></b>')
             await asyncio.sleep(20)
-            await message.delete()
+            await k.delete()
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
@@ -769,58 +769,6 @@ async def advantage_spell_chok(msg):
                      reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
     await k.delete()
-
-async def manual_filters(client, message, text=False):
-    group_id = message.chat.id
-    name = text or message.text
-    reply_id = message.id if message.reply_to_message else message.id
-    keywords = await get_filters(group_id)
-    for keyword in reversed(sorted(keywords, key=len)):
-        pattern = r"( |^|[^\w])" + re.escape(keyword) + r"( |$|[^\w])"
-        if re.search(pattern, name, flags=re.IGNORECASE):
-            reply_text, btn, alert, fileid = await find_filter(group_id, keyword)
-
-            if reply_text:
-                reply_text = reply_text.replace("\\n", "\n").replace("\\t", "\t")
-
-            if btn is not None:
-                try:
-                    if fileid == "None":
-                        if btn == "[]":
-                            await client.send_message(
-                                group_id, 
-                                reply_text, 
-                                disable_web_page_preview=True,
-                                reply_to_message_id=reply_id)
-                        else:
-                            button = eval(btn)
-                            await client.send_message(
-                                group_id,
-                                reply_text,
-                                disable_web_page_preview=True,
-                                reply_markup=InlineKeyboardMarkup(button),
-                                reply_to_message_id=reply_id
-                            )
-                    elif btn == "[]":
-                        await client.send_cached_media(
-                            group_id,
-                            fileid,
-                            caption=reply_text or "",
-                            reply_to_message_id=reply_id
-                        )
-                    else:
-                        button = eval(btn)
-                        await message.reply_cached_media(
-                            fileid,
-                            caption=reply_text or "",
-                            reply_markup=InlineKeyboardMarkup(button),
-                            reply_to_message_id=reply_id
-                        )
-                except Exception as e:
-                    logger.exception(e)
-                break
-    else:
-        return False
 
 async def global_filters(client, message, text=False):
     group_id = message.chat.id
