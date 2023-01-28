@@ -46,7 +46,7 @@ async def save_group(bot, message):
     else:
         await message.reply_photo(
                 photo="https://graph.org/file/75d4fcc66598ea1ef4941.jpg",                                               
-                                                 caption=f'<b><i>🔆 "HEROFLiX • GROUP" 亗 🔆\n•───────────────────• \n⚜Hey {u.mention}, Welcome To HeroFlix • Group. You Can Request Any Movies, Web-Series, Anime, K-Dramas, Animation, etc., here....</i></b>',
+                                                 caption=f'<b><i>🔆 "HEROFLiX • GROUP" 亗 🔆\n•───────────────────• \n⚜Hey {mention}, Welcome To HeroFlix • Group. You Can Request Any Movies, Web-Series, Anime, K-Dramas, Animation, etc., here....</i></b>',
                                                  reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❗How To Request & Download❗', url='https://telegram.me/HEROFLiX/1201') ] ] )
                 )
 
