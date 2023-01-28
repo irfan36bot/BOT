@@ -84,7 +84,7 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
             [
                 InlineKeyboardButton(
                     text=f"🌟Click Here To Download🌟",
-                    url="https://telegram.me/+Ap6E_6ZzVaY3MTNl",
+                    url="https://t.me/+WzsvFY3qXa9kZGVl",
                 )
             ]
         ]
