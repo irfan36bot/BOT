@@ -32,10 +32,10 @@ G_MODE = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    await global_filters(client, message)
-        else:
-            await auto_filter(client, message)   
-    
+    k = await global_filters(client, message)
+    if k == False:
+        await auto_filter(client, message)
+
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
