@@ -28,9 +28,9 @@ auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://forward:forward@forward.7rkvx.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "cineplix")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'cineplix')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Sydney:Sydney@sydney.1s7fbgj.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "sydney")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'sydney')
 
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001652564383'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '5884491121')
