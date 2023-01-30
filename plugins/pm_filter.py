@@ -414,7 +414,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('❓How To Use Me❓', url=f'https://telegram.me/HEROFLiX/1201'),
         ], [            
             InlineKeyboardButton('🗳 Help', callback_data='help'),
-            InlineKeyboardButton('🔅 Group', url='https://telegram.me/+E5DNZdosGiQ1OGY9'),
+            InlineKeyboardButton('🔅 Group', url='https://t.me/+EdJU1Hqk1N80ZWQ1'),
             InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
