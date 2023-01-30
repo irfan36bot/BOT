@@ -12,7 +12,7 @@ def is_enabled(value, default):
 
 class script(object):
     START_TXT = """<i><b>🎃 Helo {}, I'm <a href=https://telegram.me/{}>{}</a></i></b> \n\n<i><b>🎗I Can Provide You Any Movies, Web-Series, Anime, K-Dramas, Animation, etc.,</i></b>"""
-    HELP_TXT = """<b>❓How To Use Me? </b> \n\n<b>❗Join Our 'HeroFlix Group' or Add Me In Your Group To Get Any Movie or Series</b> \n\n🔆 <b><i>Our Official Group👇</i></b> \n<b><i>https://t.me/+WzsvFY3qXa9kZGVl</i></b>"""
+    HELP_TXT = """<b>🥁 </b><b><u>How To Download Any Movie, Series, Anime etc., For Free???</u></b> \n\n<b>🎗Group [01]: </b><b>https://t.me/+WzsvFY3qXa9kZGVl</b> \n\n<b>🎗Group</b> <b>[02]: </b><b>https://t.me/+EdJU1Hqk1N80ZWQ1</b> \n\n<b>🔆</b> <b>Join Any Of The Above Groups</b>👆"""
     ABOUT_TXT = """<i><u>🧶 </u></i><i><u><b>Follow These Steps To Connect Me To Your Group</b>👇</u>
 
 1. Click on This [</i><a href="http://telegram.me/heroriderbot?startgroup=true"><i>Blue Text</i></a><i>]
@@ -71,7 +71,6 @@ Add Me In Your Group as Admin & I Will Provide Any Movie, Series, Animation etc.
 
 <b>Commands and Usage:</b>
 •<i> /id - Get ID Of A User</i>
-•<i> /info  - Get Info About a User</i>
 •<i> /imdb  - Get Movie/Series Info from IMDb</i>"""
     ADMIN_TXT = """Help: <b>ADMIN MODS »</b>
 
@@ -91,18 +90,18 @@ This Works Only For Admins!
 •<i> /broadcast - Broadcast a Message to All Users</i>"""
     STATUS_TXT = """<b>🎗️ My Statistics 📲</b>
 
-📮<b>Total Files :</b> {}
-📮<b>Total Users :</b> {}
-📮<b>Total Chats :</b> {}
-📮<b>Used Storage :</b> {} 
-📮<b>Free Storage :</b> {}"""
+◉ <b>Total Files :</b> {}
+◉ <b>Total Users :</b> {}
+◉ <b>Total Chats :</b> {}
+◉ <b>Used Storage :</b> {} 
+◉ <b>Free Storage :</b> {}"""
 
     LOG_TEXT_G = """<b>#NewGroup</b>
 <b>Group »</b> {} (<code>{}</code>)
 <b>Total Members »</b> <code>{}</code>
 <b>Added By »</b> {}
 """
-    LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Name - {}
+    LOG_TEXT_P = """<b>#NewUser</b>
+◉ ID - <code>{}</code>
+◉ Name - {}
 """
