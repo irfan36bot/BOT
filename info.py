@@ -32,7 +32,7 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://missmaya:ayushman_card
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'heroflix_files')
 
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001725773225'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001885982111'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '1001311999825')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
