@@ -13,7 +13,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '24690581'))
 API_HASH = environ.get('API_HASH', '9f8082811c4e168f298e4574da790383')
-BOT_TOKEN = environ.get('BOT_TOKEN', '5945048757:AAFsgQj9DSYwbwkdHIIFgLRRRlHstwsw9lM')
+BOT_TOKEN = environ.get('BOT_TOKEN', '5945048757:AAFzjFj4sThda354_J9FVmZ3ShQFnYmd_yg')
 
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
@@ -28,7 +28,7 @@ auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://missmaya:ayushman_card@cluster0.k7ie11a.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'heroflix_files')
 
