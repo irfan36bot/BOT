@@ -22,7 +22,7 @@ class script(object):
 
 🔅 Want An </i><i><b>'AutoFilter + UrlShortner Bot'</b> Like Me For Your Group &amp; Earn Money Using It?
 
-📲 </i><i><b>Contact »</b> </i><i>@MrKrazyBot</i>"""    
+📲 </i><i><b>Contact »</b> </i><i>@DR_STARNGE</i>"""    
     MANUELFILTER_TXT = """Help: <b>FILTERS »</b>
 
 » <b>Filter is A Feature Where Users can Set Automated Reply to a Specific Word</b>
