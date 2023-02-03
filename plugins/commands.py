@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('❓How To Use Me❓', url='https://t.me/HeroFlix/1452')
+                InlineKeyboardButton('❓How To Use Me❓', url='https://t.me/MYFLiiX_2')
             ]
                ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -41,11 +41,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', callback_data='about')
         ], [
-            InlineKeyboardButton('❓How To Use Me❓', url=f'https://t.me/HeroFlix/1452'),
+            InlineKeyboardButton('❓How To Use Me❓', url=f'https://t.me/MYFLiiX_2'),
         ], [            
             InlineKeyboardButton('🗳 Help', callback_data='help'),
-            InlineKeyboardButton('🔅 Group', url='https://t.me/+EdJU1Hqk1N80ZWQ1'),
-            InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
+            InlineKeyboardButton('🔅 Group', url='https://t.me/MYFLiiX_2'),
+            InlineKeyboardButton('🤖 Updates', url='https://telegram.me/MYFLiiX')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -78,7 +78,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://telegram.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**🎗 You Have To Join Our Channel To Use Me 🎗 \n 🎗 मुझे इस्तेमाल करने के लिए हमारे चैनल से जुड़ना होगा 🎗** \n\n**🎃Main Channel » @HeroFlix **",
+            text="**🎗 You Have To Join Our Channel To Use Me 🎗 \n 🎗 मुझे इस्तेमाल करने के लिए हमारे चैनल से जुड़ना होगा 🎗** \n\n**🎃Main Channel » @MYFLiiX **",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -87,11 +87,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', callback_data='about')
         ], [
-            InlineKeyboardButton('❓How To Use Me❓', url=f'https://t.me/HeroFlix/1452'),
+            InlineKeyboardButton('❓How To Use Me❓', url=f'https://t.me/MYFLiiX_2'),
         ], [            
             InlineKeyboardButton('🗳 Help', callback_data='help'),
-            InlineKeyboardButton('🔅 Group', url='https://t.me/+EdJU1Hqk1N80ZWQ1'),
-            InlineKeyboardButton('🤖 Updates', url='https://telegram.me/HeroFlix')
+            InlineKeyboardButton('🔅 Group', url='https://t.me/MYFLiiX_2'),
+            InlineKeyboardButton('🤖 Updates', url='https://telegram.me/MYFLiiX')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -241,7 +241,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🔆彡[ @HEROFLiX ]彡🔆', url='https://telegram.me/HeroFlix') ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🔆彡[ @MYFLiiX ]彡🔆', url='https://telegram.me/MYFLiiX') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     
