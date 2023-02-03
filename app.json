@@ -16,8 +16,8 @@
       "index",
       "inline"
     ],
-    "website": "https://telegram.me/HEROFLiX",
-    "repository": "https://telegram.me/HEROFLiX",
+    "website": "https://telegram.me/MYFLiiX",
+    "repository": "https://telegram.me/MYFLiiX",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
