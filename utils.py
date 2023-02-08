@@ -394,8 +394,8 @@ async def get_shortlink(link):
                     return data['shortenedUrl']
                 else:
                     logger.error(f"Error: {data['message']}")
-                    return f'https://{easysky.in}/api?api={8a89d6025074799b62a6b2cb178499558efb65ae}&link={link}'
+                    return f'https://{tnlink.in}/api?api={7c91397a830dbcec59b2bf19c1b972a47b61a3ff}&link={link}'
 
     except Exception as e:
         logger.error(e)
-        return f'{easysky.in}/api?api={8a89d6025074799b62a6b2cb178499558efb65ae}&link={link}'
+        return f'{tnlink.in}/api?api={7c91397a830dbcec59b2bf19c1b972a47b61a3ff}&link={link}'
